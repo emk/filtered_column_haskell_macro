@@ -30,18 +30,15 @@ Use <code><macro:haskell></code> to wrap your code.
 == Updating Your Theme
 
 You will need to add some syntax-coloring rules to <code>main.css</code>.
-Here's a minimal set of rules from Tom Mortel's original blog post.
+Here's a minimal set of rules adapted from Tom Moertel's original blog post.
 
-  code.typocode_haskell .keyglyph {color: #b8860b;}
-  code.typocode_haskell .keyword {color: #a020f0;}
-  code.typocode_haskell .comment,
-  code.typocode_haskell .comment a {color: #b22222;}
-  code.typocode_haskell .str,
-  code.typocode_haskell .chr {color: #bc8f8f;}
-  code.typocode_haskell .conid {color: #228b22;}
-
-Note that this plugin is experimental, and you may need to update your CSS
-to work with future versions of the plugin.
+  .haskell_code .keyglyph {color: #b8860b;}
+  .haskell_code .keyword {color: #a020f0;}
+  .haskell_code .comment,
+  .haskell_code .comment a {color: #b22222;}
+  .haskell_code .str,
+  .haskell_code .chr {color: #bc8f8f;}
+  .haskell_code .conid {color: #228b22;}
 
 == License
 
