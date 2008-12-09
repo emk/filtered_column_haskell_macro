@@ -1,5 +1,4 @@
-FilteredColumnHaskellMacro
-==========================
+= FilteredColumnHaskellMacro
 
 This Mephisto plugin is based on a Typo
 plugin[http://blog.moertel.com/articles/2006/11/01/adding-haskell-syntax-highlighting-to-the-typo-blogging-system]
@@ -13,21 +12,25 @@ using:
 Of course, this assumes that you already have GHC and Cabal installed on
 your system.  This can frankly be a bit tricky on shared web servers.
 
-Example
-=======
+== Installation
 
-Use +<macro:haskell>+ to wrap your code.
+From inside your copy of Mephisto, run:
+
+  script/plugin install git://github.com/emk/filtered_column_haskell_macro.git
+
+== Example
+
+Use <code><macro:haskell></code> to wrap your code.
 
   <macro:haskell>
   addTwo :: Num a => a -> a -> a
   addTwo x y = x + y
   </macro:haskell>
 
-Updating Your Theme
-===================
+== Updating Your Theme
 
-You will need to add some syntax-coloring rules to +main.css+.  Here's a
-minimal set of rules from Tom Mortel's original blog post.
+You will need to add some syntax-coloring rules to <code>main.css</code>.
+Here's a minimal set of rules from Tom Mortel's original blog post.
 
   code.typocode_haskell .keyglyph {color: #b8860b;}
   code.typocode_haskell .keyword {color: #a020f0;}
@@ -40,8 +43,10 @@ minimal set of rules from Tom Mortel's original blog post.
 Note that this plugin is experimental, and you may need to update your CSS
 to work with future versions of the plugin.
 
-Copyright (c) 2006 Tom Moertel, released under the GPL version 3.
-Copyright (c) 2008 Eric Kidd, released under the GPL version 3.
+== License
+
+Copyright:: 2006 Tom Moertel, released under the GPL version 3.
+Copyright:: 2008 Eric Kidd, released under the GPL version 3.
 
 Note that if you exclude Tom Moertel's code in lib/haskell_macro.rb, the
 rest of the code in this plugin is also available under the MIT license.
