@@ -6,7 +6,7 @@ class HaskellMacro < FilteredColumn::Macros::Base
     cssclass   = attributes['class']
     linenumber = attributes['linenumber']
 
-    text = text.to_s.gsub(/\r/,'').gsub(/\A\n/,'').chomp
+    inner_text = inner_text.to_s.gsub(/\r/,'').gsub(/\A\n/,'').chomp
 
     IO.popen("HsColour -css", "r+") do |f|
       pid = fork { f.write inner_text; f.close; Kernel.exit!(0) }

@@ -7,7 +7,13 @@ class HaskellMacroTest < ActiveSupport::TestCase
   end
 
   test "should syntax-highlight Haskell code" do
-    html = process_macros '<macro:haskell>type M a = M a</macro:haskell>'
+    html = process_macros "<macro:haskell>type M a = M a</macro:haskell>"
+    expected = "<div class=\"typocode\"><pre><code class=\"typocode_haskell \"><span class='keyword'>type</span> <span class='conid'>M</span> <span class='varid'>a</span> <span class='keyglyph'>=</span> <span class='conid'>M</span> <span class='varid'>a</span></code></pre></div>"
+    assert_equal expected, html
+  end
+
+  test "should remove leading and trailing newlines" do
+    html = process_macros "<macro:haskell>\ntype M a = M a\n</macro:haskell>"
     expected = "<div class=\"typocode\"><pre><code class=\"typocode_haskell \"><span class='keyword'>type</span> <span class='conid'>M</span> <span class='varid'>a</span> <span class='keyglyph'>=</span> <span class='conid'>M</span> <span class='varid'>a</span></code></pre></div>"
     assert_equal expected, html
   end
