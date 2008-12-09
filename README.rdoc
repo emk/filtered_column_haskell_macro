@@ -1,0 +1,22 @@
+FilteredColumnHaskellMacro
+==========================
+
+This Mephisto plugin is based on a Typo
+plugin[http://blog.moertel.com/articles/2006/11/01/adding-haskell-syntax-highlighting-to-the-typo-blogging-system]
+by Tom Moertel.
+
+To use it, you need to have +HsColour+ in your path.  You can install it
+using:
+
+  sudo cabal install --global HsColour
+
+Example
+=======
+
+  <macro:code>
+  addTwo :: Num a => a -> a -> a
+  addTwo x y = x + y
+  </macro:code>
+
+Copyright (c) 2006 Tom Moertel, released under an unknown license
+Copyright (c) 2008 Eric Kidd, released under the MIT license
