@@ -10,13 +10,39 @@ using:
 
   sudo cabal install --global HsColour
 
+Of course, this assumes that you already have GHC and Cabal installed on
+your system.  This can frankly be a bit tricky on shared web servers.
+
 Example
 =======
 
-  <macro:code>
+Use +<macro:haskell>+ to wrap your code.
+
+  <macro:haskell>
   addTwo :: Num a => a -> a -> a
   addTwo x y = x + y
-  </macro:code>
+  </macro:haskell>
 
-Copyright (c) 2006 Tom Moertel, released under an unknown license
-Copyright (c) 2008 Eric Kidd, released under the MIT license
+Updating Your Theme
+===================
+
+You will need to add some syntax-coloring rules to +main.css+.  Here's a
+minimal set of rules from Tom Mortel's original blog post.
+
+  code.typocode_haskell .keyglyph {color: #b8860b;}
+  code.typocode_haskell .keyword {color: #a020f0;}
+  code.typocode_haskell .comment,
+  code.typocode_haskell .comment a {color: #b22222;}
+  code.typocode_haskell .str,
+  code.typocode_haskell .chr {color: #bc8f8f;}
+  code.typocode_haskell .conid {color: #228b22;}
+
+Note that this plugin is experimental, and you may need to update your CSS
+to work with future versions of the plugin.
+
+Copyright (c) 2006 Tom Moertel, released under the GPL version 3.
+Copyright (c) 2008 Eric Kidd, released under the GPL version 3.
+
+Note that if you exclude Tom Moertel's code in lib/haskell_macro.rb, the
+rest of the code in this plugin is also available under the MIT license.
+
